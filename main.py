@@ -7,3 +7,6 @@ if __name__ == "__main__":
     
     encryptor = Encryptor(SimpleCaeser())
     encryptor.encrypt(text,key)
+    
+    hasher = Hasher(HashXor())
+    hasher.hasher(text)

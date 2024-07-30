@@ -2,17 +2,17 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 
 
-class Strategy(ABC):
+class EncryptorStrategy(ABC):
     # define operações comuns a todos os algoritmos
     @abstractmethod
-    def encode(self,elements,key):
+    def encrypt(self,data,key):
         pass
     
     @abstractmethod
-    def decode(self,elements,key):
+    def decrypt(self,data,key):
         pass
 
-class Encryptor():
+class Encryptor(EncryptorStrategy):
     
     def __init__(self,strategy:Strategy) -> None:
         
@@ -27,13 +27,13 @@ class Encryptor():
     def encrypt(self,data,key):
         key = self._convert_key(key)
         elements = list(data)
-        result = self._strategy.encode(elements,key)
+        result = self._strategy.encrypt(elements,key)
         print(result)
         
     def decrypt(self,data,key):
         key = self._convert_key(key)
         elements = list(data)
-        result = self._strategy.decode(elements,key)
+        result = self._strategy.decrypt(elements,key)
         print(result)
         
     
