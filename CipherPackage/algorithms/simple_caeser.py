@@ -4,6 +4,7 @@ import numpy as np
 
 # SimpleCeaser utiliza a tabela ASCII, substituindo pela posição do elemento deslocado pelo inteiro 'key'.
 class SimpleCaeser():
+    
     def encode(self,elements,key):
         
         asciiCharList = list(map(ord,elements))

@@ -1,4 +1,4 @@
 from .encryptor import Encryptor
-from .algorithms.SimpleCaeser import SimpleCaeser
+from .algorithms.simple_caeser import SimpleCaeser
 
 __all__ = ['Encryptor', 'SimpleCaeser']
